@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>click mania | Clicker</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="game-page">
+    <header>
+        <div class="logo">Click Mania</div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="game-container">
+        <div id="start-screen">
+            <h2>Click Mania: Energy Harvester</h2>
+            <p><strong>Instructions:</strong> The ancient generator is dying. Click the core reactor as fast as you can to harvest energy. You have exactly 10 seconds.</p>
+            <input type="text" id="nickname" class="game-input" placeholder="Enter your explorer name...">
+            <button id="start-btn" class="btn-game">Start Harvesting</button>
+            <br>
+            <a href="../index.html" class="btn-small">Back to Home</a>
+        </div>
+
+        <div id="play-screen" style="display: none;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+                <h3>Time: <span id="time-display">10.0</span>s</h3>
+                <h3>Energy: <span id="score-display">0</span></h3>
+            </div>
+            <button id="clicker-btn" class="btn-game">CLICK!</button>
+        </div>
+
+        <div id="end-screen" style="display: none;">
+            <h2 id="end-message">Time's Up!</h2>
+            <p>Total Energy Harvested: <span id="final-score" style="color: #3498db; font-size: 1.5rem; font-weight: bold;">0</span></p>
+            <div class="leaderboard">
+                <h3>Top Harvesters</h3>
+                <ol id="leaderboard-list"></ol>
+            </div>
+            <button id="restart-btn" class="btn-game">Play Again</button>
+            <a href="../index.html" class="btn-game" style="background-color: #555;">Back to Home</a>
+        </div>
+    </div>
+
+    <script>
+        let score = 0;
+        let timeLeft = 10;
+        let timerInterval;
+        let nickname = "";
+
+        const screens = {
+            start: document.getElementById('start-screen'),
+            play: document.getElementById('play-screen'),
+            end: document.getElementById('end-screen')
+        };
+        const els = {
+            nickInput: document.getElementById('nickname'),
+            timeDisplay: document.getElementById('time-display'),
+            scoreDisplay: document.getElementById('score-display'),
+            finalScore: document.getElementById('final-score'),
+            leaderboardList: document.getElementById('leaderboard-list')
+        };
+
+        document.getElementById('start-btn').addEventListener('click', startGame);
+        document.getElementById('clicker-btn').addEventListener('click', incrementScore);
+        document.getElementById('restart-btn').addEventListener('click', () => switchScreen('start'));
+
+        function switchScreen(screenName) {
+            Object.values(screens).forEach(s => s.style.display = 'none');
+            screens[screenName].style.display = 'block';
+        }
+
+        function startGame() {
+            nickname = els.nickInput.value.trim() || "Wanderer";
+            score = 0;
+            timeLeft = 10.0;
+            
+            els.scoreDisplay.textContent = score;
+            els.timeDisplay.textContent = timeLeft.toFixed(1);
+            
+            switchScreen('play');
+            
+            // Start Timer loop every 100ms for decimal accuracy
+            timerInterval = setInterval(() => {
+                timeLeft -= 0.1;
+                els.timeDisplay.textContent = Math.max(0, timeLeft).toFixed(1);
+                
+                if (timeLeft <= 0) {
+                    endGame();
+                }
+            }, 100);
+        }
+
+        function incrementScore() {
+            if (timeLeft > 0) {
+                score++;
+                els.scoreDisplay.textContent = score;
+            }
+        }
+
+        function endGame() {
+            clearInterval(timerInterval);
+            switchScreen('end');
+            els.finalScore.textContent = score;
+            saveScore(nickname, score);
+            displayLeaderboard();
+        }
+
+        function saveScore(name, finalScore) {
+            let scores = JSON.parse(localStorage.getItem('echoes_scores')) || [];
+            scores.push({ name, score: finalScore });
+            scores.sort((a, b) => b.score - a.score); 
+            scores = scores.slice(0, 5); 
+            localStorage.setItem('echoes_scores', JSON.stringify(scores));
+        }
+
+        function displayLeaderboard() {
+            let scores = JSON.parse(localStorage.getItem('echoes_scores')) || [];
+            els.leaderboardList.innerHTML = scores.map(entry => `<li>${entry.name}: ${entry.score} Clicks</li>`).join('');
+        }
+    </script>
+</body>
+</html>
