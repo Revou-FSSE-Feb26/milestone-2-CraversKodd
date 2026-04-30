@@ -6,7 +6,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Base Body Styles (Dark Theme) */
+/* Body */
 body {
     background-color: #0a0a0a;
     color: #f0f0f0;
@@ -51,7 +51,7 @@ nav a:hover {
     color: #3498db; /* Blue accent color on hover */
 }
 
-/* Dropdown Menu Styles */
+/* Style Dropdown Menu */
 .dropdown {
     position: relative;
     display: inline-block;
@@ -92,7 +92,7 @@ nav a:hover {
     display: block;
 }
 
-/* Hero Section */
+/* Bagian Hero */
 .hero {
     height: 100vh;
     display: flex;
@@ -120,7 +120,7 @@ nav a:hover {
     margin: 0 auto 2rem auto;
 }
 
-/* Call to Action Button */
+/* Tombol-tombol Button */
 .btn {
     display: inline-block;
     padding: 12px 30px;
@@ -136,7 +136,7 @@ nav a:hover {
     background-color: #1b547a;
 }
 
-/* Games Showcase Section */
+/* Bagian Games Showcase */
 .games-section {
     padding: 6rem 5%;
     text-align: center;
@@ -182,7 +182,7 @@ nav a:hover {
     background-color: #1b547a;
 }
 
-/* Hover effect to lift the card slightly */
+/* Efek hover game card */
 .game-card:hover {
     transform: translateY(-10px);
     border-color: #555;
@@ -237,7 +237,7 @@ nav a:hover {
     font-size: 1rem;
 }
 
-/* Inputs and Buttons */
+/* Inputs dan Buttons */
 .game-input {
     width: 80%;
     padding: 10px;
@@ -296,7 +296,7 @@ nav a:hover {
     cursor: not-allowed;
 }
 
-/* Specific Game Elements */
+/* Game Elements */
 #clicker-btn {
     width: 150px;
     height: 150px;
@@ -342,7 +342,7 @@ canvas {
     color: #ddd;
 }
 
-/* About Section */
+/* Bagian About */
 .about-section {
     background-color: #111;
     padding: 6rem 5%;
@@ -365,7 +365,7 @@ canvas {
     font-size: 1.1rem;
 }
 
-/* Collaborate / Careers Section */
+/* Bagian Collaborate / Careers */
 .collaborate-section {
     padding: 6rem 5%;
     color: #ffffff;
@@ -403,7 +403,7 @@ canvas {
     letter-spacing: 1px;
 }
 
-/* The vertical line and button container */
+/* The vertical line dan button container */
 .collab-action {
     flex-basis: 300px;
     display: flex;
@@ -440,7 +440,7 @@ canvas {
     color: #15234b;
 }
 
-/* Responsive adjustments for smaller screens */
+/* Responsive adjustments untuk layar kecil */
 @media (max-width: 768px) {
     .collab-block {
         flex-direction: column;
