@@ -6,7 +6,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Body */
+/* Base Body Styles (Dark Theme) */
 body {
     background-color: #0a0a0a;
     color: #f0f0f0;
@@ -16,7 +16,7 @@ body {
 
 /* Navigation Bar */
 header {
-    position: fixed;
+    position: fixed; /* Keeps the nav bar at the top when scrolling */
     width: 100%;
     background: rgba(10, 10, 10, 0.95);
     display: flex;
@@ -48,10 +48,10 @@ nav a {
 }
 
 nav a:hover {
-    color: #3498db;
+    color: #3498db; /* Blue accent color on hover */
 }
 
-/* Style Dropdown Menu */
+/* Dropdown Menu Styles */
 .dropdown {
     position: relative;
     display: inline-block;
@@ -66,7 +66,7 @@ nav a:hover {
     z-index: 1;
     border-radius: 4px;
     overflow: hidden;
-    top: 100%;
+    top: 100%; /* Positions it directly below the nav text */
     left: 0;
     border: 1px solid #333;
 }
@@ -92,7 +92,7 @@ nav a:hover {
     display: block;
 }
 
-/* Bagian Hero */
+/* Hero Section */
 .hero {
     height: 100vh;
     display: flex;
@@ -120,7 +120,7 @@ nav a:hover {
     margin: 0 auto 2rem auto;
 }
 
-/* Tombol-tombol Button */
+/* Call to Action Button */
 .btn {
     display: inline-block;
     padding: 12px 30px;
@@ -136,7 +136,7 @@ nav a:hover {
     background-color: #1b547a;
 }
 
-/* Bagian Games Showcase */
+/* Games Showcase Section */
 .games-section {
     padding: 6rem 5%;
     text-align: center;
@@ -182,7 +182,7 @@ nav a:hover {
     background-color: #1b547a;
 }
 
-/* Efek hover game card */
+/* Hover effect to lift the card slightly */
 .game-card:hover {
     transform: translateY(-10px);
     border-color: #555;
@@ -237,7 +237,7 @@ nav a:hover {
     font-size: 1rem;
 }
 
-/* Inputs dan Buttons */
+/* Inputs and Buttons */
 .game-input {
     width: 80%;
     padding: 10px;
@@ -268,26 +268,8 @@ nav a:hover {
     margin: 5px;
 }
 
-.btn-small {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #2ecc71;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 1rem;
-    transition: background-color 0.3s;
-    margin: 5px;
-}
-
 
 .btn-game:hover {
-    background-color: #1f864a;
-}
-
-.btn-small:hover {
     background-color: #1f864a;
 }
 
@@ -296,7 +278,7 @@ nav a:hover {
     cursor: not-allowed;
 }
 
-/* Game Elements */
+/* Specific Game Elements */
 #clicker-btn {
     width: 150px;
     height: 150px;
@@ -342,7 +324,7 @@ canvas {
     color: #ddd;
 }
 
-/* Bagian About */
+/* About Section */
 .about-section {
     background-color: #111;
     padding: 6rem 5%;
@@ -365,7 +347,7 @@ canvas {
     font-size: 1.1rem;
 }
 
-/* Bagian Collaborate / Careers */
+/* Collaborate / Careers Section */
 .collaborate-section {
     padding: 6rem 5%;
     color: #ffffff;
@@ -403,7 +385,7 @@ canvas {
     letter-spacing: 1px;
 }
 
-/* The vertical line dan button container */
+/* The vertical line and button container */
 .collab-action {
     flex-basis: 300px;
     display: flex;
@@ -440,7 +422,7 @@ canvas {
     color: #15234b;
 }
 
-/* Responsive adjustments untuk layar kecil */
+/* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
     .collab-block {
         flex-direction: column;
@@ -471,7 +453,6 @@ footer {
     color: #555;
     font-size: 0.9rem;
 }
-
 @media (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;

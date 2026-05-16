@@ -47,8 +47,8 @@ We are a passionate team of creators dedicated to pushing the boundaries of inte
 ---
 
 ## Features Implemented
-*
-*
+* **Leader Board in game**
+* **JavaScript base game**
 
 ---
 
@@ -64,5 +64,3 @@ We are a passionate team of creators dedicated to pushing the boundaries of inte
 * **Example game**![example game](assets/ss%20aurora.png)
 * **Leaderboard**![leaderboard](assets/leaderboard.png)
 
-## Live server
-**https://revou-fsse-feb26.github.io/milestone-2-CraversKodd/**
