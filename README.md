@@ -64,3 +64,5 @@ We are a passionate team of creators dedicated to pushing the boundaries of inte
 * **Example game**![example game](assets/ss%20aurora.png)
 * **Leaderboard**![leaderboard](assets/leaderboard.png)
 
+## Live Server
+* https://revou-fsse-feb26.github.io/milestone-2-CraversKodd/
