@@ -8,7 +8,6 @@
         let nickname = "";
         let obstacles = [];
 
-        // Player Object
         const player = {
             x: 180,
             y: 450,
@@ -81,74 +80,42 @@
         }
 
         function spawnObstacle() {
-            const size = Math.random() * 30 + 20; // Size between 20 and 50
+            const size = Math.random() * 30 + 20;
             const x = Math.random() * (canvas.width - size);
-            // Speed slowly increases as score goes up
             const speed = Math.random() * 3 + 2 + (score / 10); 
             
             obstacles.push({ x, y: -size, width: size, height: size, speed });
         }
 
-        //function updateLoop() {
-            //if (!isPlaying) return;
-//
-            //// Clear Canvas
-            //ctx.clearRect(0, 0, canvas.width, canvas.height);
-//
-            //// Update Score (Assuming ~60 FPS, 60 frames = 1 second)
-            //frames++;
-            //if (frames % 60 === 0) {
-            //    score++;
-            //    els.scoreDisplay.textContent = score;
-            //}
-//
-            //// Spawn Obstacles (Every 40 frames)
-            //if (frames % 40 === 0) {
-            //    spawnObstacle();
-            //}
-//
-            //// Move and Draw Player
-            //player.x += player.dx;
-            //// Wall constraints
-            //if (player.x < 0) player.x = 0;
-            //if (player.x + player.width > canvas.width) player.x = canvas.width - player.width;
-            
             function updateLoop() {
             if (!isPlaying) return;
 
-            // Clear Canvas
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-            // Update Score (Assuming ~60 FPS, 60 frames = 1 second)
             frames++;
             if (frames % 60 === 0) {
                 score++;
                 els.scoreDisplay.textContent = score;
             }
 
-            // Spawn Obstacles (Every 40 frames)
             if (frames % 40 === 0) {
                 spawnObstacle();
             }
 
-            // Move and Draw Player
             player.x += player.dx;
-            // Wall constraints
             if (player.x < 0) player.x = 0;
             if (player.x + player.width > canvas.width) player.x = canvas.width - player.width;
             
-            ctx.fillStyle = '#2ecc71'; // Spirit color
+            ctx.fillStyle = '#2ecc71';
             ctx.fillRect(player.x, player.y, player.width, player.height);
 
-            // Move, Draw, and Check Collision for Obstacles
             for (let i = 0; i < obstacles.length; i++) {
                 let obs = obstacles[i];
                 obs.y += obs.speed;
 
-                ctx.fillStyle = '#e74c3c'; // Shadow color
+                ctx.fillStyle = '#e74c3c';
                 ctx.fillRect(obs.x, obs.y, obs.width, obs.height);
 
-                // Collision Detection (AABB)
                 if (
                     player.x < obs.x + obs.width &&
                     player.x + player.width > obs.x &&
@@ -158,7 +125,6 @@
                     endGame();
                 }
 
-                // Remove off-screen obstacles to save memory
                 if (obs.y > canvas.height) {
                     obstacles.splice(i, 1);
                     i--;

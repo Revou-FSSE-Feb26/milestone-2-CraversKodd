@@ -5,7 +5,6 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Base Body Styles (Dark Theme) */
 body {
     background-color: #0a0a0a;
     color: #f0f0f0;
@@ -15,7 +14,7 @@ body {
 
 /* Navigation Bar */
 header {
-    position: fixed; /* Keeps the nav bar at the top when scrolling */
+    position: fixed;
     width: 100%;
     background: rgba(10, 10, 10, 0.95);
     display: flex;
@@ -65,7 +64,7 @@ nav a:hover {
     z-index: 1;
     border-radius: 4px;
     overflow: hidden;
-    top: 100%; /* Positions it directly below the nav text */
+    top: 100%;
     left: 0;
     border: 1px solid #333;
 }
@@ -120,7 +119,6 @@ nav a:hover {
     margin: 0 auto 2rem auto;
 }
 
-/* Call to Action Button */
 .btn {
     display: inline-block;
     padding: 12px 30px;
@@ -182,7 +180,6 @@ nav a:hover {
     background-color: #1b547a;
 }
 
-/* Hover effect to lift the card slightly */
 .game-card:hover {
     transform: translateY(-10px);
     border-color: #555;
@@ -205,7 +202,7 @@ nav a:hover {
     color: #aaa;
     font-size: 0.95rem;
 }
-/* Game Pages General Layout */
+
 .game-page {
     min-height: 100vh;
     display: flex;
@@ -237,7 +234,6 @@ nav a:hover {
     font-size: 1rem;
 }
 
-/* Inputs and Buttons */
 .game-input {
     width: 80%;
     padding: 10px;
@@ -268,7 +264,6 @@ nav a:hover {
     margin: 5px;
 }
 
-
 .btn-game:hover {
     background-color: #1f864a;
 }
@@ -278,7 +273,6 @@ nav a:hover {
     cursor: not-allowed;
 }
 
-/* Specific Game Elements */
 #clicker-btn {
     width: 150px;
     height: 150px;
@@ -347,7 +341,7 @@ canvas {
     font-size: 1.1rem;
 }
 
-/* Bagian Collaborate / Careers */
+/* Bagian Collaborate Careers */
 .collaborate-section {
     padding: 6rem 5%;
     color: #ffffff;
@@ -419,8 +413,6 @@ canvas {
     color: #15234b;
 }
 
-
-/* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
     .collab-block {
         flex-direction: column;

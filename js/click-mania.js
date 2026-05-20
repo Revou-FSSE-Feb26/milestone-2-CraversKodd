@@ -35,7 +35,6 @@
             
             switchScreen('play');
             
-            // Start Timer loop every 100ms for decimal accuracy
             timerInterval = setInterval(() => {
                 timeLeft -= 0.1;
                 els.timeDisplay.textContent = Math.max(0, timeLeft).toFixed(1);

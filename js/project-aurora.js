@@ -1,4 +1,4 @@
- // Game State Variables
+ // Variabel game
         let targetNumber, attemptsLeft, nickname, score;
         const maxAttempts = 5;
 
@@ -51,7 +51,6 @@
             els.attemptsDisplay.textContent = attemptsLeft;
 
             if (guess === targetNumber) {
-                // Score formula: Base 100 + bonus for fewer attempts
                 score = 100 + (attemptsLeft * 20);
                 endGame(true);
             } else if (attemptsLeft === 0) {
@@ -77,12 +76,12 @@
             displayLeaderboard();
         }
 
-        // LocalStorage Leaderboard Logic
+        // Untuk localStorage leaderboard logic
         function saveScore(name, finalScore) {
             let scores = JSON.parse(localStorage.getItem('aurora_scores')) || [];
             scores.push({ name, score: finalScore });
-            scores.sort((a, b) => b.score - a.score); // Sort descending
-            scores = scores.slice(0, 5); // Keep top 5
+            scores.sort((a, b) => b.score - a.score);
+            scores = scores.slice(0, 5);
             localStorage.setItem('aurora_scores', JSON.stringify(scores));
         }
 
