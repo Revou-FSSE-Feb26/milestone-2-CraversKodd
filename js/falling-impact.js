@@ -89,7 +89,31 @@
             obstacles.push({ x, y: -size, width: size, height: size, speed });
         }
 
-        function updateLoop() {
+        //function updateLoop() {
+            //if (!isPlaying) return;
+//
+            //// Clear Canvas
+            //ctx.clearRect(0, 0, canvas.width, canvas.height);
+//
+            //// Update Score (Assuming ~60 FPS, 60 frames = 1 second)
+            //frames++;
+            //if (frames % 60 === 0) {
+            //    score++;
+            //    els.scoreDisplay.textContent = score;
+            //}
+//
+            //// Spawn Obstacles (Every 40 frames)
+            //if (frames % 40 === 0) {
+            //    spawnObstacle();
+            //}
+//
+            //// Move and Draw Player
+            //player.x += player.dx;
+            //// Wall constraints
+            //if (player.x < 0) player.x = 0;
+            //if (player.x + player.width > canvas.width) player.x = canvas.width - player.width;
+            
+            function updateLoop() {
             if (!isPlaying) return;
 
             // Clear Canvas
